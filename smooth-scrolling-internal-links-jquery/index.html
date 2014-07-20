@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<title>JQuery Interal Link Animation Scrolling</title>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash,
+	    $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+});
+</script>
+
+<style type="text/css">
+body{
+	font-family: 'Droid Sans', serif;
+	color:#444;
+	font-size:1.2em;
+	background:url('./images/bg-body.gif');
+}
+.container{
+	width:900px;
+	margin:30px auto;
+	padding:25px;
+	min-height:400px;
+	height:auto;
+}
+.container h2 { margin-top:30px;}
+.nav{margin:0; padding:0;}
+.nav li
+{
+	display: inline;
+	margin:0 20px;
+}</style>
+
+</head>
+<body>
+
+<section class="container">
+
+<h2>JQuery Interal Link Animation Scrolling</h2>
+
+<p>Click on the links below to see the scroll to effect.</p>
+
+<ul class="nav">
+	<li><a href="#home">Home</a></li>
+	<li><a href="#about">About</a></li>
+	<li><a href="#services">Services</a></li>
+	<li><a href="#portfolio">Portfolio</a></li>
+	<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div id="home">
+	<h2>Home</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor purus, placerat ut dignissim a, luctus ut magna. Nam posuere, purus eget ornare pellentesque, enim dolor sagittis lectus, nec porttitor nulla libero id quam. Sed vitae est felis, vitae sodales libero. Sed consectetur adipiscing elementum. Suspendisse magna diam, mollis a malesuada ut, rutrum a libero. Donec eget libero elit. Sed non augue ac magna porttitor posuere. Integer malesuada lorem sed augue fermentum vitae dictum lorem semper. Aliquam aliquam, justo sed placerat fringilla, magna erat placerat orci, a tristique risus ante at urna. Proin aliquet enim eget purus auctor eu interdum augue sagittis. Curabitur at dictum diam. Mauris risus est, tristique nec lobortis ut, ullamcorper quis nulla.</p>
+</div>
+
+<div id="about">
+	<h2>About Us</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor purus, placerat ut dignissim a, luctus ut magna. Nam posuere, purus eget ornare pellentesque, enim dolor sagittis lectus, nec porttitor nulla libero id quam. Sed vitae est felis, vitae sodales libero. Sed consectetur adipiscing elementum. Suspendisse magna diam, mollis a malesuada ut, rutrum a libero. Donec eget libero elit. Sed non augue ac magna porttitor posuere. Integer malesuada lorem sed augue fermentum vitae dictum lorem semper. Aliquam aliquam, justo sed placerat fringilla, magna erat placerat orci, a tristique risus ante at urna. Proin aliquet enim eget purus auctor eu interdum augue sagittis. Curabitur at dictum diam. Mauris risus est, tristique nec lobortis ut, ullamcorper quis nulla.</p>
+</div>
+
+<div id="services">
+	<h2>Services</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor purus, placerat ut dignissim a, luctus ut magna. Nam posuere, purus eget ornare pellentesque, enim dolor sagittis lectus, nec porttitor nulla libero id quam. Sed vitae est felis, vitae sodales libero. Sed consectetur adipiscing elementum. Suspendisse magna diam, mollis a malesuada ut, rutrum a libero. Donec eget libero elit. Sed non augue ac magna porttitor posuere. Integer malesuada lorem sed augue fermentum vitae dictum lorem semper. Aliquam aliquam, justo sed placerat fringilla, magna erat placerat orci, a tristique risus ante at urna. Proin aliquet enim eget purus auctor eu interdum augue sagittis. Curabitur at dictum diam. Mauris risus est, tristique nec lobortis ut, ullamcorper quis nulla.</p>
+</div>
+
+<div id="portfolio">
+	<h2>Portfolio</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tortor purus, placerat ut dignissim a, luctus ut magna. Nam posuere, purus eget ornare pellentesque, enim dolor sagittis lectus, nec porttitor nulla libero id quam. Sed vitae est felis, vitae sodales libero. Sed consectetur adipiscing elementum. Suspendisse magna diam, mollis a malesuada ut, rutrum a libero. Donec eget libero elit. Sed non augue ac magna porttitor posuere. Integer malesuada lorem sed augue fermentum vitae dictum lorem semper. Aliquam aliquam, justo sed placerat fringilla, magna erat placerat orci, a tristique risus ante at urna. Proin aliquet enim eget purus auctor eu interdum augue sagittis. Curabitur at dictum diam. Mauris risus est, tristique nec lobortis ut, ullamcorper quis nulla.</p>
+</div>
+
+<div id="contact">
+	<h2>Contact</h2>
+	<form>
+		<p>Name: <input type="text"></p>
+
+		<p>Email: <input type="text"></p>
+
+		<p>Message: <textarea></textarea></p>
+	</form>
+</div>
+
+<p style="text-align: center;">
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+
+<!-- Place this tag where you want the badge to render -->
+<g:person href="https://plus.google.com/111250215868818486726" width="273" theme="light" Layout="landscape"></g:person></p>
+<hr />
+
+<p><a href="http://www.kapadiya.net/blog/smooth-scrolling-internal-links-jquery/">Return To Tutorial</a></p>
+
+</section>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47470775-1', 'kapadiya.net');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
