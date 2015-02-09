@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+// I am not sure if we need this, but too scared to delete.
+<head>
+	<title>Color Clock</title>
+	<style type="text/css">
+/*custom font - Lato*/
+@import url("http://fonts.googleapis.com/css?family=Lato:100");
+* {margin: 0; padding: 0;}
+html, body {height: 100%;}
+
+#color {
+	color: white; font: 80px/80px Lato; height: 80px; font-weight: bold;
+	position: relative; top: 50%; margin-top: -32px;
+	text-align: center;
+}
+	</style>
+</head>
+<body>
+<div id="color"></div>
+
+<script type="text/javascript">
+
+function displayTime(){
+	var d, h, m, s, color;
+	d = new Date(); // new Date object;
+	h = d.getHours();
+	m = d.getMinutes();
+	s = d.getSeconds();
+
+	if(h <= 9) h = '0'+h;
+	if(m <= 9) m = '0'+m;
+	if(s <= 9) s = '0'+s;
+
+	color = '#'+h+m+s;
+
+	document.body.style.background = color;
+	document.getElementById('color').innerHTML = color;
+	setTimeout(displayTime, 1000);
+
+}
+
+displayTime();
+
+
+</script>
+
+</body>
+</html>
